@@ -12,9 +12,9 @@ class Main extends Component {
             selectedDish: null
         };
       }
-    onSelectedDish(dishId) {
+    onSelectedDish(dish) {
         this.setState({
-            selectedDish: dishId
+            selectedDish: dish
         })
     }
   render(){
@@ -25,7 +25,7 @@ class Main extends Component {
           <NavbarBrand href="/">Restaurant Confusion</NavbarBrand>
         </div>
       </Navbar>
-      <Menu dishes={this.state.dishes} onClick={(dishId) => this.onSelectedDish(dishId)}/>
+      <Menu dishes={this.state.dishes} onClick={(dish) => this.onSelectedDish(dish)}/>
       <Dishdetail dish={this.state.dishes.filter((dish)=>dish.id===this.state.selectedDish)[0]}/>
     </div>
   );
