@@ -3,7 +3,8 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Menu from './MenuComponent';
 import Contact from "./ContactComponent";
-import {Dishes} from '../shared/dishes';
+import About from './AboutComponent';
+import {DISHES} from '../shared/dishes';
 import {COMMENTS} from '../shared/comments';
 import {PROMOTIONS} from '../shared/promotions';
 import {LEADERS} from '../shared/leaders';
@@ -16,7 +17,7 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dishes: Dishes,
+            dishes: DISHES,
             comments:COMMENTS,
             promotions:PROMOTIONS,
             leaders:LEADERS
@@ -51,6 +52,7 @@ class Main extends Component {
               <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
               <Route path='/menu/:dishId' component={DishWithId} />
               <Route exact path='/contactus' component={Contact}/>
+              <Route exact path='/aboutus' component={() => <About leaders={this.state.leaders}/>}/>
               <Redirect to="/home" />
       </Switch>
       <Footer/>
