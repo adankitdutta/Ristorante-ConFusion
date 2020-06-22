@@ -1,14 +1,13 @@
 import React,{Component} from 'react';
 import { Card, CardImg, CardText, CardBody,
-    CardTitle, Breadcrumb, BreadcrumbItem, Button,Modal,ModalBody,ModalHeader,Label,Row, Col} from 'reactstrap';
-
+    CardTitle, Breadcrumb, BreadcrumbItem, Button,
+    Modal,ModalBody,ModalHeader,Label,Row, Col} from 'reactstrap';
 import {Control,LocalForm,Errors} from 'react-redux-form';
 import { Link } from 'react-router-dom';
 
 const required=(val)=> val && val.length;
 const minLength=(len)=>(val)=> val && (val.length>=len);
 const maxLength=(len)=>(val)=>!(val) || (val.length<=len);
-
 
 class CommentForm extends Component{
     constructor(props){
@@ -70,7 +69,7 @@ class CommentForm extends Component{
                                         className='text-danger'
                                         messages={{
                                             required:'Required ',
-                                            minLength:'Must be greater than 2 characters ',
+                                            minLength:'Must be greater than 2 characters',
                                             maxLength:'Must be 15 characters or less '
                                         }} />
                             </Col>
@@ -180,4 +179,4 @@ class CommentForm extends Component{
     }
 
 
-export default Dishdetail
+export default Dishdetail;
